@@ -2,6 +2,10 @@
 # Exit on error
 set -o errexit
 
-# Install dependencies
-pip install --upgrade pip
-pip install -r requirements.txt 
+# Upgrade pip
+python -m pip install --upgrade pip
+
+# Install requirements without cache and with no binary for problematic packages
+pip install --no-cache-dir --upgrade -r requirements.txt
+
+echo "Build completed successfully!" 
